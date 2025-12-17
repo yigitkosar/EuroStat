@@ -20,7 +20,7 @@ db = SQLAlchemy(app)
 
 ca = certifi.where()
 
-atlas_connection_string = "mongodb+srv://ao3101_db_user:Mavicino28@cluster0.opz9odr.mongodb.net/?retryWrites=true&w=majority"
+atlas_connection_string = "mongodb+srv://ao3101_db_user:Password@cluster0.opz9odr.mongodb.net/?retryWrites=true&w=majority"
 
 try:
     client = MongoClient(atlas_connection_string, tlsCAFile=ca)
@@ -567,4 +567,5 @@ def submit_rating():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == '__main__':
+
     app.run(debug=True, port=5000)
